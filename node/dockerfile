@@ -1,0 +1,6 @@
+FROM node:12.3.0
+
+ADD  dockerfile /opt/image
+RUN git clone https://github.com/masa-suzu/dotfiles.git /opt/dotfiles
+RUN sh /opt/dotfiles/deploy.sh
+RUN apt-get update && apt-get -y install less
