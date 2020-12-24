@@ -6,5 +6,7 @@ RUN dpkg -i packages-microsoft-prod.deb
 RUN apt update && apt install -y gcc make binutils libc6-dev gdb apt-transport-https less
 RUN curl -sL https://deb.nodesource.com/setup_15.x | bash -
 RUN apt-get install -y nodejs
+RUN npm install -g yarn
+RUN yarn global add create-react-app typescript
 RUN apt-get update && apt-get install -y dotnet-sdk-5.0
 RUN git clone https://github.com/masaxsuzu/dotfiles.git ~/dotfiles && bash ~/dotfiles/deploy.sh
